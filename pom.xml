@@ -32,19 +32,6 @@
 			<version>1.11.368</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-sheets -->
-
-		<!--<dependency>-->
-			<!--<groupId>com.google.apis</groupId>-->
-			<!--<artifactId>google-api-services-sheets</artifactId>-->
-			<!--<version>v4-rev513-1.23.0</version>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>com.google.api-client</groupId>-->
-			<!--<artifactId>google-api-client</artifactId>-->
-			<!--<version>1.23.0</version>-->
-		<!--</dependency>-->
-
 		<!-- test deps -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -52,6 +39,13 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.5</version>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>fluent-hc</artifactId>

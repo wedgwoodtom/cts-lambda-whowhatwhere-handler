@@ -39,4 +39,13 @@ public class Term
         term.setValue(value);
         return term;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Term{" +
+                "value='" + value + '\'' +
+                ", type=" + type +
+                '}';
+    }
 }
