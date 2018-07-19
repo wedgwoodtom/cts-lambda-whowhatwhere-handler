@@ -65,4 +65,21 @@ public class Question
             ", where=" + where +
             '}';
     }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (!(o instanceof Question)) return false;
+
+        Question question = (Question) o;
+
+        return id != null ? id.equals(question.id) : question.id == null;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return id != null ? id.hashCode() : 0;
+    }
 }

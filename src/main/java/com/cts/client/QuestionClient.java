@@ -62,12 +62,13 @@ public class QuestionClient
         Map<String, AttributeValue> bogusKey = new HashMap<String, AttributeValue>();
         bogusKey.put("Id", new AttributeValue().withS(UUID.randomUUID().toString()));
 
-        return mapper.scan(Question.class,
+        Optional<Question> question = mapper.scan(Question.class,
             new DynamoDBScanExpression()
                 .withExclusiveStartKey(bogusKey)
                 .withLimit(1)
-        ).stream().findFirst().get();
+        ).stream().findFirst();
 
+        return question.isPresent() ? question.get() : null;
     }
 
 //    static void deleteExampleTable() {

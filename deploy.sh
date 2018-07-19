@@ -31,9 +31,7 @@ ZIP_FILE_NAME=cts-lambda-whowhatwhere-handler-1.0-SNAPSHOT.jar
 #TODO: Figure out how to host the file in S3
 
 mvn clean package
-#aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb://${DIST_DIR}/${ZIP_FILE_NAME}
-#aws lambda update-function-code --function-name findTeacherData --zip-file fileb://${DIST_DIR}/${ZIP_FILE_NAME}
-# aws lambda update-function-code --function-name findCurrentStudents --zip-file fileb://${DIST_DIR}/${ZIP_FILE_NAME}
+aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb://${DIST_DIR}/${ZIP_FILE_NAME}
 #aws lambda update-function-code --function-name ${LAMBDA_FUNCTION_NAME} --zip-file fileb://${DIST_DIR}/${ZIP_FILE_NAME} --s3-bucket aws-lambda-handler-repository --s3-key ${ZIP_FILE_NAME}
 echo Code successfully uploaded to AWS!
 

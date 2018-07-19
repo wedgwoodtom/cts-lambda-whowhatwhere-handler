@@ -1,20 +1,25 @@
 package com.cts;
 
+import com.cts.data.GameQuestionData;
+import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Date;
 import java.util.List;
 
-public class WhoWhatWhereGameDataHandlerTest
+public class WhoWhatWhereGameDataHandlerIntegrationTest
 {
-//    @Test
-//    public void testFindTeacher()
-//    {
-//        WhoWhatWhereGameDataHandler whoWhatWhereGameDataHandler = new WhoWhatWhereGameDataHandler();
-//        Teacher teacher = whoWhatWhereGameDataHandler.findTeacher("ww.tom@gmail.com");
-//        Assert.assertNotNull(teacher);
-//    }
+    @Test
+    public void testGetQuestions()
+    {
+        WhoWhatWhereGameDataHandler whoWhatWhereGameDataHandler = new WhoWhatWhereGameDataHandler();
+        GameQuestionData data = whoWhatWhereGameDataHandler.getQuestionData(GetQuestionsRequest.from(0, 10));
+        Assert.assertNotNull(data);
+        Assert.assertEquals(10, data.getQuestions().size());
+        Gson gson = new Gson();
+        System.out.println(gson.toJson(data));
+    }
 //
 //    @Test
 //    public void testFindCurrentStudents()
